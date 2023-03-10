@@ -1,12 +1,26 @@
 const app=Vue.createApp({
     data(){
         return {
+            attri:'class',
             product:'Socks',
             description:'A warm fuzzy pair of socks.',
             image:'./assets/images/socks_blue.jpg',
             url:'https://cn.vuejs.org/',
+            count:10,
+            // rawHtml:'<span style="color: red ;border: 1px solid">This should be red.</span>',
             inStock:true,
-            onSale:true
+            inventory:5,
+            onSale:true,
+            disable:false,
+            details:['50% cotton','30% wool','20%'],
         }
+    },
+    methods:{
+
+    },
+    attri()
+    {
+        return this.attri;
     }
 });
+

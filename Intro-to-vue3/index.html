@@ -6,7 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>1-intro-to-vue3</title>
     <link href="./styles.css" rel="stylesheet">
-   
+   <style>
+    .list{
+        margin-left: 20px;
+        float: left;
+        border: 1px solid;
+        text-align: center;
+    }
+    .ht{
+        width: 100px;
+        height: 100px;
+        border: 1px solid;
+    }
+
+    .ok{
+        color: blue;
+    }
+   </style>
 </head>
 <body>
     <div id="app">
@@ -24,18 +40,15 @@
                     <h1>{{product}}</h1>
                     <p>{{description}}</p> 
                     <a v-bind:href="url">Vue3官网</a>
-                    <p v-if="inStock">In Stock</p>
+                    <p v-if="inventory>10">In Stock</p>
+                    <p v-else-if="inventory <=10&&inventory > 0">Almost sold out!</p>
                     <p v-else>Out  of Stock</p>
                     <p v-if="onSale">On sale</p> 
+                    <button :disabled="count < 12">点击</button>
                    </div>
+                   
             </div>
-
-        </div>
-       
-        
-      
-
-      
+        </div>   
     </div>
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
