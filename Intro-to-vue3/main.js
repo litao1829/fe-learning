@@ -12,7 +12,12 @@ const app=Vue.createApp({
             inventory:5,
             onSale:true,
             disable:false,
-            details:['50% cotton','30% wool','20%'],
+            details:['50% cotton','30% wool','20% polyester'],
+            size:['S','M','L','XL'],
+            variants:[
+                {id:2234,color:'green'},
+                {id:2235,color:'blue'}
+            ],
         }
     },
     methods:{
