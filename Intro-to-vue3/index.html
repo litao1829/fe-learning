@@ -28,6 +28,7 @@
     <div id="app">
 
         <div class="nav-bar"></div>
+        <div class="cart">Cart({{cart}})</div>
 
 
         <div class="product-display">
@@ -52,8 +53,10 @@
                     <ul>
                         <li v-for="item in size">{{item}}</li>
                     </ul>
-                    <div v-for="variant in variants" :key="variant.id">{{variant.color}}</div>
-                    <button :disabled="count < 12">点击</button>
+                    <div v-for="variant in variants" :key="variant.id" @mouseover="updateImage(variant.image)">{{variant.color}}</div>
+
+                    <button class="button" v-on:click="addToCart">Add to Cart</button>
+                    <button class="button" v-on:click="minusToCart">Remove Item</button>
                    </div>
                    
             </div>
